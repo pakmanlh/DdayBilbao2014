@@ -1,1149 +1,1090 @@
-<!--
-Google IO 2012/2013 HTML5 Slide Template
-
-Authors: Eric Bidelman <ebidel@gmail.com>
-         Luke Mahé <lukem@google.com>
-
-URL: https://code.google.com/p/io-2012-slides
--->
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Theme en Drupal 8</title>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="chrome=1">
-  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">-->
-  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-  <!--This one seems to work all the time, but really small on ipad-->
-  <!--<meta name="viewport" content="initial-scale=0.4">-->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <link rel="stylesheet" media="all" href="theme/css/default.css">
-  <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="theme/css/phone.css">
-  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
-  <script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
-</head>
-<body style="opacity: 0">
-
-<slides class="layout-widescreen">
-
-  <slide class="logoslide nobackground">
-    <article class="flexbox vcenter">
-      <span><img src="images/hashtag_camp.png"></span>
-    </article>
-  </slide>
-
-  <slide class="title-slide segue nobackground">
-    <aside class="gdbar"><img src="images/logo-ymbra.png"></aside>
-    <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
-    <hgroup class="auto-fadein">
-      <h1 data-config-title><!-- populated from slide_config.json --></h1>
-      <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
-      <p data-config-presenter><!-- populated from slide_config.json --></p>
-      <p data-config-contact class="begin-data-config-contact"><!-- populated from slide_config.json --></p>
-    </hgroup>
-  </slide>
-
-
-<!--  1. DE DÓNDE VENIMOS  -->
-
-  <slide>
-    <hgroup>
-      <h2>De dónde venimos?</h2>
-    </hgroup>
-    <article>
-      <h3>¿Cómo era la web en 2011?</h3>
-      <ul>
-        <li>jQuery</li>
-        <li>78% web in XHTML</li>
-        <li>PHP 5.4.0 RC4 Released</li>
-        <li>Wordpress</li>
-        <li>Google AdSense</li>
-      </ul>
-      <p><a href="http://w3techs.com/blog/entry/top_10_rising_web_technologies_in_2011">fuente</a></p>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>De dónde venimos?</h2>
-    </hgroup>
-    <article>
-      <h3>Drupal 7 released in <strong>5th January 2011</strong></h3>
-      <div class="columns-2-divided">
-      <ul>
-        <li>Vastly improved administrative UI</li>
-        <li>Flexible content and custom fields</li>
-        <li>Better visual presentation and <br><stron>theming with Render API</stron></li>
-        <li>Accessibility is greatly improved</li>
-      </ul>
-      <ul>
-        <li>Image support is now included</li>
-        <li>Automated code testing</li>
-        <li>Improved database support</li>
-        <li>Better distribution support</li>
-        <li>Support for the Semantic Web through RDFa markup</li>
-      </ul>
-      </div>
-      <div>
-        <p><a href="http://www.knaddison.com/drupal/contributors-drupal-7-final-numbers">10,091 mentions</a></p>
-      </div>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Hacia dónde vamos?</h2>
-    </hgroup>
-    <article>
-      <h3>La web hoy día:</h3>
-      <ul>
-        <li>HTML5</li>
-        <li>SASS</li>
-        <li>Mobile first</li>
-        <li>OOP (Symfony)</li>
-        <li>JavaScript (AngularJS, Backbone, CasperJS, etc)</li>
-      </ul>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Hacia dónde vamos?</h2>
-    </hgroup>
-    <article>
-      <h3>Drupal 8 released in ... <strong> ¿ September 2015 ?</strong></h3>
-      <div class="columns-2-divided">
-        <ul>
-          <li>HTML5</li>
-          <li>Twig</li>
-          <li>WYSIWYG</li>
-          <li>In-Place Editing</li>
-          <li>Responsive Toolbar</li>
-          <li>Responsive Front-End Theme</li>
-          <li>Responsive Admin Theme</li>
-        </ul>
-        <ul>
-          <li>Responsive Images</li>
-          <li>Responsive Tables</li>
-          <li>Simplified Overlay</li>
-          <li>Multilingual</li>
-          <li>Better Blocks</li>
-          <li>Configuration Management</li>
-          <li>Web Services</li>
-        </ul>
-      </div>
-      <p></p>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Hacia dónde vamos?</h2>
-    </hgroup>
-    <article>
-      <h3><a href="http://ericduran.github.io/drupalcores/">2399 Contributors!</a></h3>
-      <img src="images/contributors-d8.png" class="d8contributors">
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>La vida del Themer en D7</h2>
-    </hgroup>
-    <article>
-      <h3>Divitis</h3>
-      <pre >
-      <div>ola</div>
-      </pre>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>ESTRATEGIA MULTIDISPOSITIVO</h2>
-    </hgroup>
-    <article>
-      <div class="bg-mb-img first grey">App móvil</div>
-      <div class="vs-separator">vs</div>
-      <div class="bg-mb-img middle grey ">Web móvil<p>m.dominio.com</p></div>
-      <div class="vs-separator">vs</div>
-      <div class="bg-mb-img last">Estrategia "responsive"</div>
-    </article>
-  </slide>
-
-  <slide> <!--  RWD  -->
-    <hgroup>
-      <h2>¿Qué és el Responsive Web Design?</h2>
-    </hgroup>
-    <article >
-      <br>
-      <div class="columns-2-divided prop6040">
-      <ul>
-        <li class="nolist"><p><strong>ETHAN MARCOTTE</strong><br>A List Apart, 2010</p><br></li>
-        <li>MEDIA QUERIES</li>
-        <li>REJILLAS (GRID) FLUIDOS O LÍQUIDOS</li>
-        <li>IMÁGENES FLEXIBLES</li>
-      </ul>
-      <ul>
-        <li class="nolist img"><img src="images/marcotte-responsive-web-design.jpg" /></li>
-      </ul>
-    </article>
-  </slide>
-  <slide>
-    <hgroup>
-      <h2>¿Qué és el Responsive Web Design?</h2>
-    </hgroup>
-    <article class="rwd-mediaqueries">
-      <h3>1. MEDIA QUERIES</h3>
-      <pre class="prettyprint" data-lang="css">
-      @media all and (min-width: <b>320px</b>) {
-        .col { background-color: <b>green</b>  }
-        .co2 { background-color: <b>blue</b>}
-        .co3 { background-color: <b>red</b>}
-      }
-      @media all and (min-width: <b>768px</b>) {
-        .col1 { float: left; <b>width: 50%</b> }
-        .col2 { float: left; <b>width: 50%</b> }
-        .col3 { clear:both              }
-      }
-      </pre>
-      <div class="rwd-mediaqueries__img">
-        <img src="images/mediaqueries.png" />
-      </div>
-    </article>
-  </slide>
-  <slide>
-    <hgroup>
-      <h2>¿Qué és el Responsive Web Design?</h2>
-    </hgroup>
-    <article class="rwd-grids">
-      <h3>2. REJILLAS (GRID) FLUIDOS O LÍQUIDOS</h3>
-      <div class="rwd-grids__img">
-        <img src="images/rwd-grids.png" />
-      </div>
-    </article>
-  </slide>
-  <slide>
-    <hgroup>
-      <h2>¿Qué és el Responsive Web Design?</h2>
-    </hgroup>
-    <article class="rwd-grids">
-      <h3>3. IMÁGENES FLEXIBLES</h3>
-      <div class="rwd-grids__img">
-        <img src="images/rwd-images.jpg" />
-      </div>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Qué queremos decir hoy con "responsive"?</h2>
-    </hgroup>
-    <article>
-      <ul>
-        <li><b>ONE WEB</b><br>&rarr; <span class="small">Misma información y servicios independientemente del dispositivo</li>
-
-
-          <ul>
-            <li>Mismo contenido</li>
-            <li>1 único sitio / template</li>
-            <li>1 URL
-              <ul>
-                <li>Contenido no duplicado</li>
-                <li>1 estrategia SEO</li>
-              </ul>
-            </li>
-          </ul>
-        <li>   <b>&rarr;  RESS (REsponsive & Server Side)</b></li>
-      </ul>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Diferentes estrategias según situación</h2>
-    </hgroup>
-    <article>
-      <h3>1. Conversión de sitio web existente</h3>
-      <h3>2. Creación desde 0: <b>Mobile first</b></h3>
-    </article>
-  </slide>
-
-
-  <slide> <!--  SITIO WEB EXISTENTE  A pros -->
-    <hgroup>
-      <h2>Diferentes estrategias según situación</h2>
-      <h3>1. Conversión de sitio web existente</h3>
-    </hgroup>
-    <article class="smaller">
-      <strong>A. Adaptar toda la web</strong><br><br>
-      <div class="columns-2-divided">
-        <ul>
-          <li class="green">Relativamente rápido</li>
-          <li class="green">Familiar para el desarrollador</li>
-          <li class="green">Más barato</li>
-        </ul>
-        <ul>
-          <li class="red">Olvida experiencia usuario</li>
-          <li class="red">Peor performance</li>
-          <li class="red">Peor soporte</li>
-          <li class="red">Parche para salir del paso</li>
-        </ul>
-      </div>
-    </article>
-  </slide>
-  <slide>
-    <hgroup>
-      <h2>Diferentes estrategias según situación</h2>
-      <h3>1. Conversión de sitio web existente</h3>
-    </hgroup>
-    <article>
-      <strong>B. Adaptar por fases:</strong><br><br>
-        <div class="padding-left">- Página a página<br><br></div>
-        <div class="padding-left">- Componente a componente</div>
-
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Diferentes estrategias según situación</h2>
-      <h3>1. Conversión de sitio web existente</h3>
-    </hgroup>
-    <article class="smaller">
-      <strong>B. Adaptar por fases</strong><br><br>
-      <div class="columns-2-divided">
-        <ul>
-          <li class="green">Visible inmediatamente</li>
-          <li class="green">Más probabilidad de publicación</li>
-          <li class="green">Introducción gradual</li>
-        </ul>
-        <ul>
-          <li class="red">Sin consistencia</li>
-          <li class="red">Quedarse a medio camino</li>
-          <li class="red">Coexistencia técnica</li>
-        </ul>
-      </div>
-    </article>
-  </slide>
-
-
-  <slide> <!--  MOBILE FIRST  -->
-    <hgroup>
-      <h2>Diferentes estrategias según situación</h2>
-      <h3>2. Creación desde 0: Mobile first</h3>
-    </hgroup>
-    <article class="slide-mobile-first">
-      <img src="images/mobile-desktop.png" />
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Diferentes estrategias según situación</h2>
-      <h3>2. Creación desde 0: Mobile first</h3>
-    </hgroup>
-    <article>
-      <ul>
-        <li>A. Diseño propio
-          <div class="small padding-left">&rarr; posibilidad de adaptar soluciones ya existentes</div>
-        </li>
-        <li>B. Diseño externo
-          <div class="small padding-left">&rarr; movimiento limitado</div>
-          <div class="small padding-left">&rarr; mucha personalización</div>
-        </li>
-      </ul>
-    </article>
-  </slide>
-
-   <slide>
-    <hgroup>
-      <h2>Diferentes estrategias según situación</h2>
-      <h3>2. Creación desde 0: Mobile first</h3>
-    </hgroup>
-    <article>
-      <div class="columns-2-divided">
-        <ul>
-          <li class="green">Inicio limpio</li>
-          <li class="green">Priorizamos contenido y funcionalidad</li>
-          <li class="green">Mejor performance</li>
-          <li class="green">Future friendly</li>
-        </ul>
-        <ul>
-          <li class="red">Tiempo requerido</li>
-          <li class="red">Desafío mental</li>
-          <li class="red">Difícil </li>
-          <li class="red">Nuevo, no familiar</li>
-        </ul>
-      </div>
-    </article>
-  </slide>
-
-
-<!--  1. HERRAMIENTAS TÉCNICAS  -->
-
-  <slide>
-    <hgroup>
-      <h2>RWD en Drupal</h2>
-    </hgroup>
-    <article>
-      <ul>
-        <li>Menús</li>
-        <li>Imágenes responsive/flexibles</li>
-        <li>Vídeos/iframes responsive/flexibles</li>
-        <li>Tablas responsive</li>
-        <li>Sistemas de Grids</li>
-        <li>Themes Drupal existentes</li>
-        <li>Components</li>
-      </ul>
-    </article>
-  </slide>
-
-
-   <slide>
-    <hgroup>
-      <h2>Menús</h2>
-    </hgroup>
-    <article>
-      <div class="columns-2-divided">
-        <ul>
-          <li><b>Módulos existentes <br>(Menor esfuerzo)</b></li>
-          <li><a href="http://dgo.to/responsive_menus">Responsive menus</a> «<a href="http://drastikbydesign.com/demo/responsive-menus-demo-1-mean-menu">Demo</a>»</li>
-          <li><a href="http://dgo.to/mmenu">Mobile sliding menu</a> «<a href="http://omega4.dev/#">Demo</a>»</li>
-        </ul>
-        <ul >
-          <li><b>Opciones personalizadas <br>(Mayor esfuerzo)</b></li>
-          <li>Cómo?</li>
-          <li>template.php</li>
-          <li>JavaScript</li>
-        </ul>
-      </div>
-    </article>
-  </slide>
-
-
-  <slide>
-    <hgroup>
-      <h2>Menús: Opciones personalizadas</h2>
-      <h3>template.php (theme_menu_link()</h3>
-    </hgroup>
-    <article>
-      <pre class="prettyprint" data-lang="php">
-function theme_menu_link(array $variables) {
-  $element = $variables['element'];
-  $sub_menu = '';
-
-  if ($element['#below']) {
-    $sub_menu = drupal_render($element['#below']);
-  }
-  $output = l($element['#title'], $element['#href'], $element['#localized_options']);
-  return '&lt;li' . drupal_attributes($element['#attributes']) . '&gt;'
-  . $output . $sub_menu . "&lt;/li&gt;\n";
-}
-    </pre>
-
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Menús: Opciones personalizadas</h2>
-      <h3>template.php - theme_menu_tree()</h3>
-    </hgroup>
-    <article>
-      <pre class="prettyprint" data-lang="php">
-function theme_menu_tree($variables) {
-  return '&lt;ul class="menu"&gt;' . $variables['tree'] . '&lt;/ul&gt;';
-}
-    </pre>
-
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Menús: Opciones personalizadas</h2>
-    </hgroup>
-    <article class="smaller">
-      <pre class="prettyprint" data-lang="JavaScript">
-Drupal.behaviors.rwdmenu = {
-  attach: function(context, settings) {
-    function RWDMenu(){
-      if (($(this).width() < 768) && ($('#main-menu .show-menu').length == 0)) {
-          $('#main-menu').prepend('&lt;a href="javascript:;" class="show-menu"
-          title="'+ Drupal.t('Show menu')+'"&gt;Menu&lt;/a&gt;');
-          $('#main-menu ul').addClass("hide");
-          $('#main-menu a.show-menu', context).click(function() {
-            $('#main-menu ul').toggleClass('hide show');
-          });
-      }
-      else if (($(this).width() > 768) && ($('#main-menu .show-menu').length != 0)) {
-        $('#main-menu .show-menu').remove();
-        $('#main-menu ul').removeClass('hide');
-      }
-    }
-    $(window).bind('resize orientationchange', function() {
-      RWDMenu();
-    });
-    RWDMenu();
-  }
-};
-})(jQuery, Drupal, this, this.document);
-    </pre>
-
-    </article>
-  </slide>
-
-
-
-  <!--  RESPONSIVE IMAGES  -->
-
-  <slide>
-    <hgroup>
-      <h2>Imágenes flexibles/responsive</h2>
-    </hgroup>
-    <article>
-      <ul class="">
-        <li><a href="http://dgo.to/adaptive_image">Adaptative image</a> (D7)</li>
-        <li><a href="http://dgo.to/picture">Picture</a> + <a href="http://dgo.to/breakpoints">Breakpoints</a> (D7 & D8)</li>
-      </ul>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>¿Qué es Picture?</h2>
-    </hgroup>
-    <article>
-      <ul class="">
-        <li>Etiquetas SPAN que funcionan como &lt;picture&gt;  HTML5</li>
-        <li><a href="http://www.w3.org/TR/html-picture-element/">http://www.w3.org/TR/html-picture-element/</a></li>
-      </ul>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>¿Qué es Picture?</h2>
-    </hgroup>
-    <article>
-      <pre class="prettyprint" data-lang="HTML">
-
-&lt;div class="field-item even" rel="og:image rdfs:seeAlso"
- resource="teaser_mb.png"&gt;
-&lt;span data-picture=""&gt;
-  &lt;span data-src="<b>teaser_mb.png</b>"  data-width="600" data-height="400"&gt;&lt;/span&gt;
-  &lt;span data-media="(min-width: 0px) and (max-width: 49.99em)" data-src="<b>teaser_mb.png</b>"  data-width="600" data-height="400"&gt;&lt;/span&gt;
-  &lt;span data-media="(min-width: 50em) and (max-width: 61.19em)" data-src="<b>teaser_narrow.png</b>"  data-width="1000" data-height="500"&gt;&lt;/span&gt;
-  &lt;span data-media="(min-width: 61.2em)" data-src="<b>teaser_desktop.png</b>" data-width="1000" data-height="200"&gt;&lt;/span&gt;
-  &lt;noscript&gt;
-    &lt;img typeof="foaf:Image" src="<b>teaser_mb.png</b>" width="600" height="400" alt="" /&gt;
-  &lt;/noscript&gt;
-&lt;/span&gt;
-&lt;/div&gt;
-    </pre>
-
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>¿Qué es Breakpoints?</h2>
-    </hgroup>
-    <article>
-      <ul>
-        <li>Importación / creación de mediaqueries</li>
-        <li>Incluyendo multiplicadores (x1.5 ,x2)</li>
-        <li>Agrupados</li>
-        <li>Exportables (Archivos .yml)</li>
-      </ul>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>¿Cómo se combinan?</h2>
-    </hgroup>
-    <article>
-      <ol>
-        <li>Creación Breakpoints</li>
-        <li>Creación Grupos Breakpoints</li>
-        <li>Creación ImageStyles</li>
-        <li>Configuración de Picture con Grupos de Breakpoint</li>
-        <li>Aplicación Picture (display)</li>
-      </ol>
-    </article>
-  </slide>
-
-  <slide class="create_breakpoints">
-    <hgroup>
-      <h3>1.- Creación Breakpoints</h3>
-    </hgroup>
-    <article>
-      <img src="images/breakpoint_screenshot.jpg">
-    </article>
-  </slide>
-
-  <slide class="create_breakpoints">
-    <hgroup>
-      <h3>2.- Creación Grupos Breakpoints</h3>
-    </hgroup>
-    <article>
-      <img src="images/breakpoint_groups_screenshot.jpg">
-    </article>
-  </slide>
-
-  <slide class="create_breakpoints">
-    <hgroup>
-      <h3>3.- Creación ImageStyles</h3>
-    </hgroup>
-    <article>
-      <img src="images/image_style_screenshot.jpg">
-    </article>
-  </slide>
-
-  <slide class="create_breakpoints">
-    <hgroup>
-      <h3>4.- Configuración de Picture con Grupos de Breakpoint</h3>
-    </hgroup>
-    <article>
-      <img src="images/picture_screenshot.jpg">
-    </article>
-  </slide>
-
-  <slide class="create_breakpoints">
-    <hgroup>
-      <h3>5.- Aplicación Picture (display)</h3>
-    </hgroup>
-    <article>
-      <img src="images/picture_display_screenshot.jpg">
-    </article>
-  </slide>
-
-
-  <slide> <!--  RESPONSIVE VÍDEOS  -->
-    <hgroup>
-      <h2>Vídeos responsive </h2>
-    </hgroup>
-    <article>
-      <ul>
-        <li>HTML5 Ok</li>
-        <li>iFrame (height...)</li>
-        <li>ok! con módulo <a href="http://dgo.to/fitvids">FitVids</a></li>
-        <li>Usa Librería <a href="https://github.com/davatron5000/FitVids.js">FitVids</a></li>
-        <li>YouTube, Vimeo, Blip.tv, Viddler, Kickstarter ...</li>
-      </ul>
-    </article>
-  </slide>
-
-  <slide> <!--  RESPONSIVE TABLES  -->
-    <hgroup>
-      <h2>Tablas responsive</h2>
-      <h3>Módulos existentes (Opción barata)</h2>
-    </hgroup>
-    <article class="footable">
-      <ul>
-        <li><a href="http://dgo.to/footable">FooTable</a><br><img src="images/footable-screenshot.jpg"></li>
-      </ul>
-
-    </article>
-  </slide>
-
-  <slide> <!--  RESPONSIVE TABLES  -->
-    <hgroup>
-      <h2>Tablas responsive</h2>
-      <h3>Módulos existentes (Opción barata)</h2>
-    </hgroup>
-    <article>
-      <ul>
-        <li><a href="http://dgo.to/footable">FooTable</a></li>
-        <li><a href="http://dgo.to/responsive_tables">Responsive Tables</a><br><br>
-        <p>Opción compleja muy configurable, todavía en <em>dev</em> </p>
-        </li>
-      </ul>
-    </article>
-  </slide>
-
-  <slide> <!--  RESPONSIVE TABLES  -->
-    <hgroup>
-      <h2>Tablas responsive</h2>
-      <h3>Opciones personalizadas (Opción cara)</h2>
-    </hgroup>
-    <article>
-      <ul>
-        <li><a href="https://github.com/zurb/responsive-tables">Fijación de cabecera</a> </li>
-        <li>Adaptación de la información... </li>
-      </ul>
-    </article>
-  </slide>
-
-  <slide> <!--  SIESTEMAS DE GRIDS  -->
-    <hgroup>
-      <h2>Sistemas de Grids</h2>
-    </hgroup>
-    <article>
-      <p>Nos permiten definir y cambiar de layout «fácilmente» <br>(sin float, clear, overflow ...) en función de la mediquery (SASS&CSS)</p>
-      <ul class="grids">
-        <li><img src="images/zen_screenshot.jpg"></li>
-        <li><img src="images/susy-logo.png"></li>
-        <li><img src="images/singularitygs.jpg"></li>
-      </ul>
-    </article>
-  </slide>
-
-  <slide> <!--  SIESTEMAS DE GRIDS  -->
-    <hgroup>
-      <h2>Sistemas de Grids</h2>
-      <h3>Gemas de Ruby</h3>
-    </hgroup>
-    <article>
-      <ul>
-        <li>Con distintas versiones que pueden convivir juntas</li>
-        <li>Gestionarlas con <a href="https://rvm.io/">Ruby Version Manager</a></li>
-        <li>Gestionarlas con <a href="http://bundler.io/">Bundle</a></li>
-        <li>Unos temas necesitan unas versiones concretas y otros otras...</li>
-      </ul>
-    </article>
-  </slide>
-
-  <slide> <!--  SIESTEMAS DE GRIDS  -->
-    <hgroup>
-      <h2>Sistemas de Grids</h2>
-    </hgroup>
-    <article>
-    <p>Ejemplo gemfile</p>
-      <pre class="prettyprint" data-lang="Gemfile">
-source "https://rubygems.org"
-# Working stack for Zen, from https://drupal.org/node/2188263#comment-8567655
-gem "sass", "3.2.14"
-gem "compass", "0.12.3"
-gem "zen-grids", "1.4"
-gem "breakpoint", "2.0.7"
-gem "susy", "2.0.0.alpha.4"
-gem "sass-globbing"
-gem "sassy-buttons"
-    </pre>
-    <pre class="prettyprint" data-lang="Shell">
-$ gem install bundler
-$ bundle install
-    </pre>
-    </article>
-  </slide>
-
-  <slide> <!--  SIESTEMAS DE GRIDS  -->
-    <hgroup>
-      <h2>Sistemas de Grids: Zen grids</h2>
-      <h3>Definición de una rejilla de tres columnas </h3>
-    </hgroup>
-    <article>
-<pre class="prettyprint" data-lang="HTML">
-  &lt;div class="sidebar-first"&gt;
-    &lt;div id="content"&gt;
-      Contenido
-    &lt;/div&gt;
-    &lt;div class="region-sidebar-first"&gt;
-      Columna
-    &lt;/div&gt;
-  &lt;/div&gt;
-</pre>
-    </article>
-  </slide>
-
-  <slide> <!--  SIESTEMAS DE GRIDS  -->
-    <hgroup>
-      <h2>Sistemas de Grids: Zen grids</h2>
-      <h3>Definición de una rejilla de tres columnas </h3>
-    </hgroup>
-    <article>
-<pre class="prettyprint" data-lang="SASS">
-  <b>$zen-column-count: 3;
-  $zen-gutter-width:  20px;</b>
-  .sidebar-first {
-    .region-sidebar-first {
-      @include zen-grid-item(1, 1);
-    }
-    #content {
-      @include zen-grid-item(2, 2);
-    }
-  }
-</pre>
-    </article>
-  </slide>
-
-  <slide class="sidebar-first"> <!--  THEMES  -->
-    <hgroup>
-      <h2>Sistemas de Grids: Zen grids</h2>
-      <h3>Definición de una rejilla de tres columnas </h3>
-    </hgroup>
-    <div id="content">
-      Contenido
-    </div>
-    <div class="region-sidebar-first">
-      Columna
-    </div>
-  </slide>
-
-
-  <slide class="two-sidebars"> <!--  THEMES  -->
-    <hgroup>
-      <h2>Sistemas de Grids: Zen grids</h2>
-      <h3>Definición de una rejilla de tres columnas </h3>
-    </hgroup>
-    <div id="content">
-      Contenido
-    </div>
-    <div class="region-sidebar-first">
-      Columna 1
-    </div>
-    <div class="region-sidebar-second">
-      <div class="block">
-        Bloque 1
-      </div>
-      <div class="block">
-        Bloque 2
-      </div>
-      <div class="block">
-        Bloque 3
-      </div>
-      <div class="block">
-        Bloque 4
-      </div>
-      <div class="block">
-        Bloque 5
-      </div>
-      <div class="block">
-        Bloque 6
-      </div>
-    </div>
-  </slide>
-
-
-  <slide class="smaller"> <!--  SIESTEMAS DE GRIDS  -->
-    <hgroup>
-      <h2>Sistemas de Grids: Susy</h2>
-    </hgroup>
-    <article class="">
-<pre class="prettyprint" data-lang="SASS">
-.has-two-sidebars {
-  .l-content {
-    @include span-columns(8, 16);
-    @include push(4, 16);
-  }
-  .l-region--sidebar-first,
-  .l-region--sidebar-second {
-    @include span-columns(4, 16);
-  }
-  .l-region--sidebar-first {
-    @include pull(12, 16);
-  }
-  .l-region--sidebar-second {
-    @include omega;
-    clear: none;
-  }
-}
-</pre>
-    </article>
-  </slide>
-
-  <slide class="has-two-sidebars"> <!--  THEMES  -->
-    <hgroup>
-      <h2>Sistemas de Grids: Susy</h2>
-    </hgroup>
-    <div class="l-content">
-      Contenido
-    </div>
-    <div class="l-region--sidebar-first">
-      Columna 1
-    </div>
-    <div class="l-region--sidebar-second">
-      Columna 2
-    </div>
-  </slide>
-
-
-    <slide> <!--  SIESTEMAS DE GRIDS  -->
-      <hgroup>
-        <h2>Sistemas de Grids: Susy</h2>
-      </hgroup>
-      <article>
-  <pre class="prettyprint" data-lang="HTML">
-
-  &lt;div class="has-two-rightsidebars"&gt;
-    &lt;div class="l-content"&gt;
-      Contenido
-    &lt;/div&gt;
-
-    &lt;div class="l-region--sidebar-first"&gt;
-      Columna 1
-    &lt;/div&gt;
-
-    &lt;div class="l-region--sidebar-second"&gt;
-      Columna 1
-    &lt;/div&gt;
-  &lt;/div&gt;
-
-  </pre>
-      </article>
-    </slide>
-
-    <slide > <!--  SIESTEMAS DE GRIDS  -->
-      <hgroup>
-        <h2>Sistemas de Grids: Susy</h2>
-      </hgroup>
-      <article class="">
-  <pre class="prettyprint" data-lang="SASS">
-  .has-two-rightsidebars {
-    .l-content {
-      @include span-columns(8, 12);
-    }
-    .l-region--sidebar-first,
-    .l-region--sidebar-second {
-      @include span-columns(4 omega, 12);
-    }
-    .l-region--sidebar-second {
-      clear: right;
-    }
-  }
-  </pre>
-      </article>
-    </slide>
-
-  <slide class="has-two-rightsidebars"> <!--  THEMES  -->
-    <hgroup>
-      <h2>Sistemas de Grids: Susy</h2>
-    </hgroup>
-    <div class="l-content">
-      Contenido
-    </div>
-    <div class="l-region--sidebar-first">
-      Columna 1
-    </div>
-    <div class="l-region--sidebar-second">
-      Columna 2
-    </div>
-  </slide>
-
-  <slide> <!--  THEMES  -->
-    <hgroup>
-      <h2>Grids: Integración dentro de Drupal</h2>
-    </hgroup>
-    <article>
-      <ul>
-        <li>TPL's y regiones del tema principal </li>
-        <li>Display Suite</li>
-          <ul>
-            <li>Omitir CSS propio y definirlo layout dentro del tema.</li>
-            <li>No necesita visualización desde la administración.</li>
-          </ul>
-        <li>Panels </li>
-        <ul>
-          <li>Integrar definición básica (desktop) en CSS propio para la correcta visualización en la administración.  </li>
-          <li>Versiones de layout "no desktop" dentro de tema.</li>
-        </ul>
-      </ul>
-    </article>
-  </slide>
-
-
-  <slide class="drupal-themes"> <!--  THEMES  -->
-    <hgroup>
-      <h2>Themes Drupal existentes</h2>
-    </hgroup>
-    <article>
-      <ul class="build">
-        <li><a href="http://dgo.to/zen"><img src="images/zen-logo.png"><span>Zen</span></a></li>
-        <li><a href="http://dgo.to/omega"><img src="images/omega-logo.png"><span>Omega 4</span></a></li>
-        <li><a href="http://dgo.to/bootstrap"><img src="images/bootstrap-logo.png"><span>Bootstrap</span></a></li>
-        <li><a href="http://dgo.to/zurb-foundation"><img src="images/zurb-foundation-logo.png"><span>Foundation</span></a></li>
-      </ul>
-    </article>
-  </slide>
-
-  <slide class="theme-zen"> <!--  THEMES  -->
-    <hgroup>
-      <h2>Zen (<span>1,249,332 descargas</span>)</h2>
-    </hgroup>
-    <article>
-      <ul>
-        <li>SASS</li>
-        <li>Zen Grids</li>
-        <li>Media queries == mobile first </li>
-        <li>respond.js per >IE8</li>
-        <li>Layout Fixed o RWD</li>
-        <li>SMACS por components</li>
-        <li>Solución Menú RWD</li>
-      </ul>
-    </article>
-  </slide>
-
-  <slide class="theme-omega"> <!--  THEMES  -->
-    <hgroup>
-      <h2>Omega 4 (<span>613,477 descargas</span>)</h2>
-    </hgroup>
-    <article>
-      <ul>
-        <li>Susy y Singularitygs</li>
-        <li>Mediaqueries gestionadas por breakpoint</li>
-        <li>4 Layouts RWD</li>
-        <li>Layout off-canvas solución fácil menu RWD</li>
-        <li>LiveReload, Cleatype, Selectivizr.js, CSS3 Media Queries JS, Respond.js, CSS3 PIE, HTML5 shiv</li>
-      </ul>
-    </article>
-  </slide>
-
-  <slide class="theme-bootstrap"> <!--  THEMES  -->
-    <hgroup>
-      <h2>Bootstrap (<span>147,166 descargas</span>)</h2>
-    </hgroup>
-    <article>
-      <ul class="first">
-        <li>LESS</li>
-        <li>Adaptación del marcado de Drupal al framework</li>
-        <li>Para después aplicar un «skin»</li>
-        <li><a href="https://drupal.org/node/2011034">Módulos complementarios:</a><br>
-          <ul>
-            <li>Display Suite, Views, Blocks, Panels, Field Formatters, Images/Slideshows, Menus, Modals, UX, administration </li>
-          </ul>
-        </li>
-      </ul>
-    </article>
-  </slide>
-
-  <slide class="theme-foundation"> <!--  THEMES  -->
-    <hgroup>
-      <h2>Foundation (<span>51,670 descargas</span>)</h2>
-    </hgroup>
-    <article>
-      <ul class=" first">
-        <li>Adaptación del marcado de Drupal al framework</li>
-        <li>Para después aplicar un «skin»</li>
-        <li>Gema zurb-foundation junto con Compass</li>
-      </ul>
-    </article>
-  </slide>
-
-    <slide> <!--  THEMES  -->
-    <hgroup>
-      <h2>Componentes</h2>
-    </hgroup>
-    <article class="small">
-      <ul>
-        <li>Slides/Carruseles
-          <ul>
-            <li><a href="http://dgo.to/flexslider">Flexslider</a> <br>
-              Navegación táctil, Navegación con teclado, Animaciones configurables, Carrusel (varias slides por página).
-            </li>
-            <li><a href="http://dgo.to/owlcarousel">Owl Carousel</a></li>
-            <li><a href="http://dgo.to/swiper">Swiper</a> </li>
-          </ul>
-        </li>
-        <li>Tabs y accordion > no módulo, solo sanbox o soluciones custom </li>
-        <li>Lightbox/colorbox > no es buena idea en mb</li>
-      </ul>
-    </article>
-  </slide>
-
-  <slide> <!--  MOBILE SITES  -->
-    <hgroup>
-      <h2>Herramientas para mobile sites</h2>
-    </hgroup>
-    <article>
-      <ul>
-        <li><b><a href="https://drupal.org/project/mobile_theme">Mobile Theme</a> /
-        <a href="http://dgo.to/mobile_switch">Mobile Switch</a></b><br><br>
-    Problemas con la Caché al hacer un theme solo para MB...<br>
-
-    <a href="http://dgo.to/1591208">Problem with caching enabled</a> (Active)<br><br>
-    </li>
-        <li>
-        <b><a href="http://dgo.to/context_mobile_detect">Context Mobile detect</a> /
-        <a href="http://dgo.to/context_breakpoint">Context breakpoint</b></a><br><br>
-    Problemas con la caché al usar el contexto para dispositivos MB...
-    <a href="http://dgo.to/1768556">Context Mobile Detect does not work with page cache enabled (Needs to work)</a><br><br></li>
-        <li>Soluciones<br>
-    Usar Varnish para detectar el dispositivo (complejo)<br>
-    No cachear la versión MB (bajo rendimiento)</li>
-      </ul>
-    </article>
-  </slide>
-
-  <slide> <!--  D8  -->
-    <hgroup>
-      <h2>Responsive en D8</h2>
-    </hgroup>
-    <article>
-      <ul>
-        <li>Admin: Responsive theme: Seven<br>
-        <li>Admin: Toolbar</li>
-        <li>Breakpoints in core</li>
-        <li>Picture element (Responsive images)</li>
-        <li>Display modes (Form modes & View Modes)</li>
-        <li>Mejora significativa Front-end performance</li>
-        <ul>
-          <li>Miniminiza y agrupa recursos (JS y CSS)</li>
-          <li>Mejora uso caché</li>
-        </ul>
-      </ul>
-    </article>
-  </slide>
-
-  <!--  CONCLUSIONES  -->
-  <slide>
-    <hgroup>
-      <h2>Conclusiones</h2>
-    </hgroup>
-    <article>
-      <ul>
-        <li>Situación idónea Mobile First siempre<br>
-        <li>Presupuesto reducido: sondear soluciones menos complejas
-          <ul>
-            <li>No personalizar demasiado</li>
-            <li>Crear diseño adaptado a la solución</li>
-          </ul>
-        </li>
-        <li>Tener en cuenta el nivel técnico del equipo según solución</li>
-        <li>Estimar según esfuerzos requeridos (no es % ni un fijo)</li>
-      </ul>
-    </article>
-  </slide>
-
-  <slide class="thank-you-slide segue nobackground">
-    <aside class="gdbar right"><img src="images/logo-ymbra.png"></aside>
-    <article class="flexbox vleft auto-fadein">
-      <br><br>
-      <h2>&lt;Eskerrik asko!&gt;</h2>
-      <br><br>
-        <p><b>Pako Garcia</b>. Vegan Drupal Themer and Designer at Ymbra<br>
-        <span class="blue">@pakmanlh</span></p>
-    </article>
-  </slide>
-
-
-  <slide class="logoslide nobackground">
-    <article class="flexbox vcenter">
-      <span><img src="images/logo-ymbra.png"></span>
-    </article>
-  </slide>
-
-  <slide class="backdrop"></slide>
-
-</slides>
-
-<script>
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-XXXXXXXX-1']);
-_gaq.push(['_trackPageview']);
-
-(function() {
-  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
-</script>
-
-<!--[if IE]>
-  <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
-  <script>CFInstall.check({mode: 'overlay'});</script>
-<![endif]-->
-</body>
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Theme en Drupal 8</title>
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/ymbra.css" id="theme">
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Theme en Drupal 8</h1>
+					<h3>Pako Garcia</h3>
+					<p>
+						<small><a href="http://ymbra.com">Vegan Themer at <img src="images/logo-ymbra.png" class="logo-ymbra"></a><br><a href="http://twitter.com/pakmanlh"> @pakmanlh</a> in the internets</small>
+					</p>
+					<p><i class="fa fa-twitter fa-2x"></i>  #DdayBilbao2014</p>
+				</section>
+
+				<section>
+					<section>
+						<h2>¿De dónde venimos?</h2>
+						<h3>¿Cómo era la web en 2011?</h3>
+				      <ul>
+				        <li>jQuery</li>
+				        <li>78% web in XHTML</li>
+				        <li>PHP 5.4.0 RC4 Released</li>
+				        <li>Wordpress</li>
+				        <li>Google AdSense</li>
+				      </ul>
+				      <p><a href="http://w3techs.com/blog/entry/top_10_rising_web_technologies_in_2011">fuente</a></p>
+					</section>
+					<section>
+						<h2>¿Cómo cambió Drupal?</h2>
+						<h3>Drupal 7 fue lanzado el 5 de enero del 2011</h3>
+						<ul>
+						  <li>Mejora sustancial en la UI de administración (Seven)</li>
+						  <li>Contenido flexible y campos configurables</li>
+						  <li>Mejora visual y capa de theming con <stron> Render API</stron></li>
+						  <li>Accesibilidad mejorada en gran medida</li>
+						  <li>Soporte de imágenes incluido</li>
+						  <li>Automated code testing</li>
+						  <li>Mejora de soporte de base de datos</li>
+						  <li>Mejora de soporte a distribuciones</li>
+						  <li>Soporte para Semantic Web a través de RDFa markup</li>
+						</ul>
+					  <p><a href="http://www.knaddison.com/drupal/contributors-drupal-7-final-numbers">10,091 mentions</a></p>
+					</section>
+					<section>
+						<h2>¿Hacia dónde vamos?</h2>
+						<h3>La web hoy día:</strong></h3>
+						<ul>
+			        <li>HTML5</li>
+			        <li>SASS</li>
+			        <li>Mobile first</li>
+			        <li>OOP (Symfony)</li>
+			        <li>JavaScript (AngularJS, Backbone, CasperJS, etc)</li>
+			      </ul>
+					</section>
+					<section>
+						<h2>¿Cómo será Drupal 8?</h2>
+						<h3>Drupal 8 released in ... <strong> ¿ September 2015 ?</strong></h3>
+						<ul>
+		          <li>WYSIWYG</li>
+		          <li>In-Place Editing</li>
+		          <li>Responsive Toolbar</li>
+		          <li>Responsive Front-End Theme</li>
+		          <li>Responsive Admin Theme</li>
+		          <li>Responsive Images</li>
+		          <li>Responsive Tables</li>
+		          <li>Simplified Overlay</li>
+		        </ul>
+					</section>
+
+					<section>
+						<h2>¿Cómo será Drupal 8?</h2>
+						<h3>Y además...</h3>
+						<ul>
+							<li>Multilingual</li>
+							<li>Better Blocks</li>
+							<li>Configuration Management</li>
+							<li>Web Services</li>
+		          <li>Symfony 2</li>
+		          <li>Twig</li>
+		          <li>Views</li>
+		        </ul>
+					</section>
+
+					<section>
+						<h2>¿Cómo será Drupal 8?</h2>
+						<h3>Y SOBRETODO</h3>
+						<ul>
+							<li class="fragment">No soportará IE6</li>
+							<li class="fragment">No soportará IE7</li>
+							<li class="fragment">No soportará IE8</li>
+		        </ul>
+					</section>
+
+					<section data-background="images/applause.gif" data-background-transition="slide">
+					<!-- <h2>HURRA!</h2> -->
+					</section>
+
+				</section>
+
+				<section>
+					<section>
+						<h1>Problemas a resolver</h1>
+					</section>
+
+					  <section>
+					    <h1>Divitis</h1>
+					    <h3>Marcado enriquecido <sup>tm</sup></h3>
+					    <pre><code data-trim contenteditable>
+					<div class="foo bar baz whatever">
+					  <div class="foo bar baz whatever">
+					    <div class="foo bar baz whatever">
+
+					      <h1 class="pane-title">hello im drupal</h1>
+
+					      <div class="node node-type node-viewmode-argh">
+					        always add another div
+					      </div>
+
+					    </div>
+					  </div>
+					</div>
+					    </code></pre>
+					  </section>
+
+					  <section>
+					    <h1>sobrecarga css</h1>
+					  </section>
+
+					  <section id="csslove">
+					    <small>27 archivos css en drupal 7 stark</small>
+					    <pre><code data-trim contenteditable class="max">
+<style media="all">
+  @import url("sites/modules/system/system.base.css?mz4mz0");
+  @import url("sites/modules/system/system.menus.css?mz4mz0");
+  @import url("sites/modules/system/system.messages.css?mz4mz0");
+  @import url("sites/modules/system/system.theme.css?mz4mz0");</style>
+<style media="all">
+  @import url("sites/modules/contextual/contextual.css?mz4mz0");
+</style>
+<style media="all">
+  @import url("sites/modules/aggregator/aggregator.css?mz4mz0");
+  @import url("sites/modules/book/book.css?mz4mz0");
+  @import url("sites/modules/comment/comment.css?mz4mz0");
+  @import url("sites/sites/all/modules/contrib/date/date_api/date.css?mz4mz0");
+  @import url("sites/modules/field/theme/field.css?mz4mz0");
+  @import url("sites/modules/node/node.css?mz4mz0");
+  @import url("sites/sites/all/modules/contrib/picture/picture_wysiwyg.css?mz4mz0");
+  @import url("sites/modules/poll/poll.css?mz4mz0");
+  @import url("sites/modules/search/search.css?mz4mz0");
+  @import url("sites/sites/all/modules/contrib/search_krumo/search_krumo.css?mz4mz0");
+  @import url("sites/modules/user/user.css?mz4mz0");
+  @import url("sites/sites/all/modules/contrib/video_filter/video_filter.css?mz4mz0");
+  @import url("sites/modules/forum/forum.css?mz4mz0");
+  @import url("sites/sites/all/modules/contrib/views/css/views.css?mz4mz0");
+  @import url("sites/sites/all/modules/contrib/admin_menu/admin_menu.css?mz4mz0");
+  @import url("sites/sites/all/modules/contrib/admin_menu/admin_menu.uid1.css?mz4mz0");
+</style>
+<style media="all">
+  @import url("sites/sites/all/modules/contrib/ctools/css/ctools.css?mz4mz0");
+  @import url("sites/sites/all/modules/contrib/panels/css/panels.css?mz4mz0");
+  @import url("sites/sites/all/modules/contrib/panels/plugins/layouts/twocol_stacked/twocol_stacked.css?mz4mz0");
+  @import url("sites/sites/all/themes/mothership/mothership/templates/panels//mothership-html5page/mothership-html5page.admin.css?mz4mz0");
+</style>
+<style media="all">
+  @import url("sites/themes/stark/layout.css?mz4mz0");
+</style>
+					    </code></pre>
+
+					  </section>
+
+					  <section>
+					    <h1>sobrecarga css</h1>
+					    <h3>5 classes para cada uno de los campos</h3>
+
+					    <pre><code>
+					<div class="field field-something field-even_more another-field-cause-im-drupal">
+					    wait im just a piece of data
+					</div>
+
+					    </code></pre>
+
+					  </section>
+
+					  <section>
+					    <h2>Solución Frontend</h2>
+					    <ul>
+					      <li>Empezar desde nada</li>
+					      <li>No solucionar TODOS los problemas</li>
+					      <li>Proveer herramientas</li>
+					      <li>Visibilidad</li>
+					      <li>Consistencia</li>
+					    </ul>
+					  </section>
+
+				    <section>
+				      <h1>HTML5</h1>
+				      <pre><code>
+				        <header role="banner">
+				          <nav>
+				            <a href="/">home</a> | <a href="/info">info</a>
+				          </nav>
+				        </header>
+				        <main>
+
+				          </aside>
+				          <div>
+				            ...
+				          </div>
+				        </main>
+				        <footer  role="">
+				        </footer>
+
+				      </code></pre>
+				    </section>
+
+				    <section>
+
+				      <h2>
+				        &lt;div id=&quot;mala-práctica&quot;&gt;...&lt;/div&gt;
+				      </h2>
+				      <p>75% menos de ID's *</p>
+				    </section>
+
+				    <section>
+				      <h1>Drupal CSS </h1>
+
+				      <h3>Drupal 7</h3>
+				      <pre><code>
+				        &lt;body class=&quot;html one-sidebar sidebar-first not-front logged-in
+				        page-node page-node- page-node-4 node-type-fieldtest &quot;&gt;
+				      </code></pre>
+				      <h3>Drupal8</h3>
+				      <pre><code>
+				        &lt;body class=&quot;  how-about-we_figure_that-out &quot;&gt;
+				      </code></pre>
+				    </section>
+
+				    <section>
+				      <h1>Estructura CSS </h1>
+				      <h2>Basado en SMACSS & BEM</h2>
+				      <a href="https://drupal.org/node/1887918">CSS architecture (1887918)</a>
+				      <pre><code>
+				      .notification {
+				          /* general styles for all notifications */
+				        }
+				        .notification--info {
+				          /* blue color adjustments */
+				        }
+				      </code></pre>
+
+				    </section>
+
+				    <section>
+				      <h1>Archivos css </h1>
+				      <img src="images/cssfilename.jpg">
+				    </section>
+
+				    <section>
+				      <h1>B.A.T. Namescheme</h1>
+				      <ul>
+				      	<li><a href="https://drupal.org/node/1887922">CSS file organization (nid: 1887922)</a></li>
+				      	<li><a href="https://www.drupal.org/node/1536682">BAT Cleanup & CSS Files Removal</a></li>
+				      </ul>
+
+
+				    </section>
+
+				    <section id="filestructure">
+				      <h2>D8 Estructura de archivos</h2>
+				      <img src="images/filestructure.png">
+				      <br>
+				      <small> Drupal 8 core</small>
+				    </section>
+
+				    <section>
+				      <h1>/themes</h1>
+				      <p>proveer visibilidad</p>
+				      <p>themes ahora viven en "/themes"</p>
+				      <p>o "sites/ *** /themes" </p>
+				    </section>
+
+				    <section>
+				      <h2>D8 Estructura de archivos en módulos</h2>
+				      <img src="images/filestructure-modules.png">
+				        <p>modulename/templates/*.html.twig</p>
+				    </section>
+
+				    <section>
+				      <h1 class="large"> <i class="fa fa-bolt"></i> DEBUG!</h1>
+				    </section>
+
+				    <section>
+				      <h2>¿Dónde está la plantilla?</h2>
+				      <img src="images/debug-pre.jpg">
+				    </section>
+
+				    <section>
+				      <h1>    <i class="fa fa-bolt"></i> DEBUG!</h1>
+				      <pre><code>
+				        $settings['twig_debug'] = TRUE;
+				      </code></pre>
+				      <small> settings.php</small>
+				    </section>
+
+				    <section>
+				      <h2>$settings['twig_debug'] = TRUE;</h2>
+				      <img src="images/debug-post.jpg">
+				    </section>
+
+				    <section data-background="#000">
+				      <h1 class="large">R I P</h1>
+				      <h1>Theme functions</h1>
+				      <h2>Render arrays FTW!</h2>
+
+				    </section>
+
+				    <section>
+				      <h1>Compilación</h1>
+				      <p>
+				        Las plantillas twig son interpretables (Back y Front)
+				      </p>
+				    </section>
+
+				    <section>
+				      <h1>.scss -> .css</h1>
+				      <p>(no todavía pero con previsión)</p>
+				    </section>
+
+				    <section>
+				      <h1>¿ SQL en la capa de theme ?</h1>
+				    </section>
+
+				    <section>
+				      <h1>¿Quien quiere eso?</h1>
+				      <h2 class="fragment">Malos desarrolladores</h2>
+				      <h2 class="fragment">Themes son solamente marcado y css!</h2>
+				    </section>
+
+				    <section>
+				      <h3>Branding y logo</h3>
+				      <p>ahora es un bloque exportable</p>
+				      <img src="images/block-sitebranding.png">
+				    </section>
+
+				</section>
+
+				<!-- D7 vs D8 -->
+				<section id="twigbasic">
+				  <section>
+				    <h1>Twig Básico</h1>
+
+				    <p>facilísimo</p>
+				  </section>
+				  <!-- php -->
+				  <section>
+				    <h2> Comentarios y variables </h2>
+				    <pre><code>
+				    /*
+				    comment
+				    */
+				      &lt;?php print $foo ; ?&gt;
+				    </code></pre>
+				      <small>phptemplate</small>
+
+
+				    <pre><code>
+				      {# comment #}
+
+				      {{ foo }}
+				    </code></pre>
+				    <small>twig</small>
+
+				  </section>
+
+				  <section>
+				    <h2> Variables  </h2>
+				    <pre><code contenteditable>
+				   /*
+				    so php template
+				    Now where is that value again
+				   */
+
+				 &lt;?php print $foo['bar']['UND']->baz['what']->thefuck['seriously'] ?&gt;
+
+				    </code></pre>
+				    <small>phptemplate</small>
+
+				    <pre><code contenteditable>
+				      {# hello twig can you find valdo ? #}
+
+				      {{ foo.bar.baz.done.with.this.shit }}
+
+				      {{ foo['bar'] }}
+
+				      {% functions %}
+				    </code></pre>
+				      <small>Twig</small>
+
+				  </section>
+
+				  <section>
+				    <h1>Condicionales</h1>
+
+				    <pre><code>
+				    &lt;?php if($foo): ?&gt;
+				      &lt;?php print $var; ?&gt;
+				    &lt;?php endif; ?&gt;
+				    </code></pre>
+				    <small>phptemplate</small>
+
+				    <pre><code>
+				      {% if foo %}
+				        {{ var }}
+				      {% endif %}
+				    </code></pre>
+				    <small> twig</small>
+
+				  </section>
+
+				  <!-- for -->
+				  <section>
+				    <h2>Bucles</h2>
+				    <pre><code contenteditable>
+				      <h2>Team Awesome </h2>
+				      <ul>
+				        {% for user in users %}
+				            <li>{{ user.username}}</li>
+				        {% endfor %}
+				      </ul>
+				    </code></pre>
+				      <small>twig</small>
+				    <pre><code contenteditable>
+				      <h2>Team Awesome </h2>
+				      <ul>
+				        <li>cottset</li>
+				        <li>joel</li>
+				        <li>jen</li>
+				        <li>mark carver</li>
+				        <li>mortendk</li>
+				      </ul>
+				    </code></pre>
+				      <small>drupal8</small>
+
+				  </section>
+
+				  <section>
+				    <h2>Acciones sobre bucles</h2>
+				    <pre><code contenteditable>
+
+				    {{ loop.length }}
+
+				    {{ loop.first }}
+
+				    {{ loop.last }}
+
+				    {{ loop.index }}
+
+				    {% if loop.first %}
+				      ...
+				    {% elseif loop.index == 2 %}
+				      ...
+				    {% elseif loop.last %}
+				        ...
+				    {% endif %}
+				    </code></pre>
+				  </section>
+
+				  <!-- include -->
+				  <section>
+				    <h1>Set</h1>
+				    <pre><code contenteditable>
+				      {% set foo %}
+				        count-{{ loop.index }}
+				      {% endset %}
+
+				      {{ foo }},
+				    </code></pre>
+				    <small>twig</small>
+
+				    <pre><code contenteditable>
+				      count-1,count-2, count-3,
+				    </code></pre>
+				    <small> output </small>
+				  </section>
+
+				  <!-- filter -->
+				  <section>
+				    <h1>Filtros </h1>
+				    <pre><code contenteditable>
+				     <p>
+				    {% filter upper %}
+				        uppercase for the win
+				    {% endfilter %}
+				    </p>
+				    </code></pre>
+
+				    <pre><code contenteditable>
+				      <p>
+				        UPPERCASE FOR THE WIN
+				      </p>
+				    </code></pre>
+				  </section>
+
+
+				  <section>
+				    <h2>|filter </h2>
+				    <pre><code>
+				      {{ foo|dostufftofoo }}
+
+				      {#  name = <a hred="foo">pako</a> #}
+				      {{ name|striptags|title }}
+				    </code></pre>
+				    <small>twig</small>
+
+				    <pre><code>
+				      Pako
+				    </code></pre>
+
+				  </section>
+				  <section>
+				  	<h2>Más sobre filtros</h2>
+				  	<p><a href="http://twig.sensiolabs.org/doc/filters/index.html">Documentación</a></p>
+				  </section>
+
+				</section>
+
+				<!-- Drupal 8 theme -->
+				<section id="drupal8theme">
+
+				  <section>
+				    <h1>Drupal8 Theme </h1>
+				  </section>
+
+				  <section>
+				    <h2>theme structure</h2>
+				      <img src="images/pagebuild.png">
+				  </section>
+
+
+
+				  <section>
+				  	<h2>drupal7.info</h2>
+				    <pre><code class="max" data-trim>
+				      name = name
+				      description = This is my epic D7 theme
+				      screenshot = screenshot.png
+				      engine = phptemplate
+				      core = 7.x
+				      php = 5.2
+
+				      regions[header] = Header
+				      regions[logo] = Logo
+				      regions[menu] = Menu
+				      regions[messages] = Messages
+				      regions[content] = Content
+				      regions[footer] = Footer
+
+				      stylesheets[all][] = css/style.css
+				      #FOAD fix
+				      stylesheets[all][] = donteverloadmeagain.css
+				    </code></pre>
+
+				  </section>
+
+				  <section>
+				  	<h2>drupal8.info.yml</h2>
+				    <pre><code data-trim>
+				      name: drupal8themename
+				      type: theme
+				      description: This is my epic D8 theme
+				      package: Core
+				      core: 8.x
+
+				      stylesheets:
+				        all:
+				          - css/layout.css
+				        print:
+				          - css/print.css
+				        stylesheets-remove:
+				          - system.theme.css
+				          - user.icons.css
+				          - stuffidontwant.css
+
+				      regions:
+				        header: Header
+				        logo: Logo
+				        menu: Menu
+				        messages: Messages
+				        content: Content
+				        footer: Footer
+
+				      # engine: phptemplate
+				    </code></pre>
+
+				  </section>
+
+				  <section>
+				    <h2> Si sois amantes de phptemplate</h2>
+				    <pre><code>
+
+
+				      # engine: phptemplate
+
+
+				    </code></pre>
+				    <small>themename.info</small>
+				  </code></pre>
+				  </section>
+
+				  <section>
+				    <h1>Sobreescribir</h1>
+				    <pre><code>
+				      stylesheets[all][] = css/style.css
+				      #FOAD fix
+				      ;stylesheets[all][] = donteverloadmeagain.css
+				      stylesheets[all][] = system.theme.css
+				      stylesheets[all][] = user.icons.css
+				      stylesheets[all][] = stuffidontwant.css
+				    </code></pre>
+				    <small>drupal 7</small>
+
+				    <pre><code>
+				        stylesheets-remove:
+				          - system.theme.css
+				          - user.icons.css
+				          - stuffidontwant.css
+				    </code></pre>
+				    <small>drupal 8</small>
+
+				  </section>
+				  <!-- regions -->
+				  <section>
+				    <h1>Regiones en Page</h1>
+
+				    <h3>Drupal 7</h3>
+				    <pre><code data-trim contenteditable>
+				&lt;?php if ($page['footer']): ?&gt;
+				  <footer role="contentinfo">
+				    &lt;?php print render($page[footer]);  ?&gt;
+				  </footer>
+				&lt;?php endid ?&gt;
+				    </code></pre>
+				    <small>&lt;?php print render($page[region]);  ?&gt;</small>
+
+				    <h3>Drupal 8</h3>
+				    <pre><code data-trim contenteditable>
+				  {% if page.footer %}
+				  <footer role="contentinfo">
+				    {{ page.footer}}
+				  </footer>
+				{% endif %}
+				    </code></pre>
+				    <small>twig: {{ page.region }} </small>
+				  </section>
+				  <!-- regions -->
+
+				  <section>
+				    <h3>Blocks</h3>
+				    <pre><code contenteditable>
+				    &lt;div{{ attributes }}&gt;
+				      {{ title_prefix }}
+				      {% if label %}
+				        &lt;h2{{ title_attributes }}&gt;{{ label }}&lt;/h2&gt;
+				      {% endif %}
+				      {{ title_suffix }}
+
+				      &lt;div{{ content_attributes }}&gt;
+				        {{ content }}
+				      &lt;/div&gt;
+				    &lt;/div&gt;
+				        </code></pre>
+				        <small>block.twig</small>
+
+				        <pre><code data-trim contenteditable>
+				    &lt;nav class=&quot;{{ attributes.class }}&quot; role=&quot;{{ attributes.role}}&quot;&gt;
+				      {{ title_prefix }}
+				      {% if label %}
+				        &lt;h2{{ title_attributes }}&gt;{{ label }}&lt;/h2&gt;
+				      {% endif %}
+				      {{ title_suffix }}
+				      {{ content }}
+				    &lt;/nav&gt;
+				    </code></pre>
+				    <small>block--system-menu-block.html.twig</small>
+				  </section>
+
+				  <section>
+				    <h1>block.html.twig</h1>
+				    <p>theme hook suggestions</p>
+				    <img src="images/blockhooksuggestion.jpg">
+				  </section>
+
+
+				  <section>
+				    <h2>{{ whatever|replace }}</h2>
+				    <pre><code data-trim contenteditable>
+				      <div class="block blockmore blockmorecauseofdrupal">...</div>
+				      {{ attributes.class |replace( {'block': '' }) }}
+				      <div class=”block-whatever”>
+				    </code></pre>
+				    <small>block.html.</small>
+
+				    <pre><code data-trim contenteditable>
+				      &lt;nav class=&quot;{{ attributes.class }}&quot; role=&quot;{{ attributes.role}}&quot;&gt;
+				        {{ title_prefix }}
+				        {% if label %}
+				          &lt;h2{{ title_attributes }}&gt;{{ label }}&lt;/h2&gt;
+				        {% endif %}
+				        {{ title_suffix }}
+
+				        {{ content }}
+				      &lt;/nav&gt;
+				    </code></pre>
+				    <small>block--system-menu-block.html.twig</small>
+
+				    <pre><code data-trim contenteditable>
+				      <nav class="l-foobar mainmenu" role="navigation">
+				        ... content ...
+				      </nav>
+
+				    </code></pre>
+				    <small>  Done </small>
+				  </section>
+
+
+
+
+				  <section id="attributes">
+				    <h1>{{attributes}}</h1>
+
+				    <pre><code contenteditable>
+				    <article {{attributes}}> ... </article>
+				    </code></pre>
+
+				    <pre><code contenteditable>
+				    <article class="{{attributes.class}}" {{attributes}}>
+				      ...
+				    </article>
+				    </code> </pre>
+
+				    <pre><code contenteditable>
+				      <article
+				      class="{{ attributes.class }}"
+				      role="{{ attributes.role }}"
+				      {{attributes}}
+
+				      >
+				      ....
+				      </article>
+				    </code> </pre>
+
+				  </section>
+
+
+				  <section>
+				    <h2>add .foo</h2>
+				    <pre><code contenteditable>
+
+				      <article class="foo {{ attributes.class}}" {{attributes}}>
+				        foo
+				      </article>
+
+				    </code></pre>
+				    <small>.twig</small>
+
+				    <pre><code contenteditable>
+				      <article class="foo field-foo" role="something">
+				        foo
+				      </article>
+				    </code></pre>
+				    <small>drupal</small>
+
+				  </section>
+
+
+				  <section id="terms">
+				    <h2>ejemplo con Términos</h2>
+				    <img src="images/terms.png">
+				  </section>
+
+				  <section>
+				    <h2>el Marcado deseado</h2>
+				    <small>HTML</small>
+				    <pre><code contenteditable>
+
+				      &lt;div class="tags"&gt;
+				        <span>3 tags:</span>
+
+				        <a href="#" class="odd">foo</a>,
+				        <a href="#" class="even resaltado">bar</a>,
+				        <a href="#" class="odd">baz</a>.
+
+				      &lt;/div&gt;
+				    </code></pre>
+				      <small>CSS</small>
+
+				      <pre><code contenteditable>
+				      .resaltado{
+				        color: green;
+				        font-style:italic;
+				      }
+				      </code></pre>
+				  </section>
+
+				  <section>
+				    <h2>node</h2>
+				    <pre><code contenteditable>
+				        <article class="...">
+				        ....
+				        {{ content.field_tags}}
+
+				        {{ content|without('field_tags') }}
+				        </article>
+				      </code></pre>
+				      <small>node.html.twig</small>
+				  </section>
+
+				  <section id="test">
+				    <h2>{{ <span class="pink">content</span>|without(<span class="orange">field-name</span>) }}</h2>
+				    <br><br>
+				    <h2>{{ fieldname }}</h2>
+				  </section>
+
+
+				  <section>
+				    <pre><code contenteditable>
+				    {# Start the loop #}
+				    {% for delta, item in items %}
+
+				      {# create a class var #}
+				      {% set class %}
+				        {# odd even #}
+				        {{- cycle(["even", "odd"], delta) }}
+				        {# count-x #}
+				        count-{{ loop.index -}}"
+				      {% endset %}
+
+				      <a href="#" class="{{class}}">{{item}}</a>,
+
+				    {# end the loop #}
+				    {% endfor %}
+				    </code></pre>
+				    <small>field--field-tags.html.twig</small>
+
+				    <pre><code contenteditable>
+				       <a href="#" class="odd count-1">Iturraspe</a>,
+				       <a href="#" class="even count-2">Goikoetxea</a>,
+				       <a href="#" class="odd count-3">Aldaiturriaga</a>,
+				    </code></pre>
+				    <small>drupal8</small>
+				  </section>
+
+				  <section>
+				    <h2>tags vs tag</h2>
+				    <pre><code contenteditable>
+				      {# first loop #}
+				      {% if loop.first %}
+				        {# set tags / tag #}
+				        <span>
+				        {% if loop.length > 1 %}
+				          {{ loop.length }}
+				          tags:
+				          {% else %}
+				          tag:
+				        {% endif %}
+				        <span>
+				      ...
+				    </code></pre>
+				    <small>field--field-tags.html.twig</small>
+
+				    <pre><code contenteditable>
+				      <span>3 tags:</span>
+				    </code></pre>
+
+				  </section>
+
+				  <section>
+				    <h2>add a class on 2 tag</h2>
+				    <pre><code contenteditable>
+				      {% if loop.first %}
+				        ...
+				      {% elseif loop.index == 2 %}
+				      <a href="#" class="resaltado {{class}}">{{item}}</a>,
+
+				      ...
+
+				    {# end the loop #}
+				    {% endfor %}
+				    </code></pre>
+				    <small>field--field-tags.html.twig</small>
+
+				    <pre><code contenteditable>
+				       <a href="#" class="odd count-1">Iturraspe</a>
+				       <a href="#" class="resaltado even count-2">Goikoetxea</a>
+				       <a href="#" class="odd count-3">Aldaiturriaga</a>
+				    </code></pre>
+				  </section>
+
+				  <section>
+
+				    <pre><code contenteditable>
+				      {% if loop.first %}
+				        <span>
+				        {% if loop.length > 1 %}
+				          {{ loop.length }}  tags:
+				        {% else %}
+				        tag:
+				        {% endif %}
+				        <span>
+
+				        <a href="#" class="{{class}}">{{item}}</a>,
+				      {% elseif loop.index == 2 %}
+				        <a href="#" class="resaltado {{class}}">{{item}}</a>,
+				      {% elseif loop.last %}
+				        <a href="#" class="{{class}}">{{item}}</a>.
+				      {% else %}
+				        <a href="#" class="{{class}}">{{item}}</a>,
+				      {% endif %}
+				    </code></pre>
+				    <small>field--field-tags.html.twig</small>
+
+				    <pre><code contenteditable>
+				        3 tags:
+				       <a href="#" class="odd count-1">Iturraspe</a>,
+				       <a href="#" class="resaltado even count-2">Goikoetxea</a>,
+				       <a href="#" class="odd count-3">Aldaiturriaga</a>.
+				    </code></pre>
+
+				  </section>
+
+
+				  <section id="twigblock">
+				    <h1>TWIG BLOCK</h1>
+
+				    <pre><code contenteditable>
+				      {% block foobar %}
+				        {# puedo ser otra cosa #}
+				      {% endblock %}
+				    </code></pre>
+				  </section>
+
+				  <section>
+				    <img src="images/twigblock.png">
+				  </section>
+
+				  <section>
+				    <img src="images/twigblock-debug.png">
+				  </section>
+
+
+				  <section>
+				    <pre><code contenteditable>
+				      {% block headerblock %}
+				        Change me if Im on the frontpage
+				      {% endblock %}
+				    </code></pre>
+				    <small>page.twig.html</small>
+
+				    <pre><code contenteditable>
+				      {% extends "themes/drupal8theme/templates/page.html.twig" %}
+				      {% block headerblock %}
+				        Im on the frontpage :)
+				      {% endblock %}
+				    </code></pre>
+				    <small>page--front.html.twig</small>
+				  </section>
+
+				  <section>
+				    <img src="images/twigblock-page.png">
+				  </section>
+
+				  <section>
+				    <img src="images/twigblock-frontpage.png">
+				  </section>
+
+
+				</section>
+
+				<!-- translate -->
+				<section id="translate">
+				  <section>
+				    <h1>Traducción</h1>
+				  </section>
+
+				  <section>
+
+
+				    <pre><code contenteditable>
+				    {{ 'last checked: @time ago'| t({'@time':time}) }}
+				    </code></pre>
+
+
+				  </section>
+
+
+				  <section>
+
+				    <pre><code contenteditable>
+				      {% trans %}
+				        Hi im a euskaldun and i speak funny: ongi etorri
+				      {% endtrans %}
+				    </code></pre>
+
+				  </section>
+
+
+				</section>
+
+				<!-- translate -->
+
+				<section>
+					<h1>Recursos</h1>
+					<ul>
+						<li><a href="https://www.drupal.org/theme-guide/8">Theme Guide in Drupal 8</a></li>
+						<li><a href="https://github.com/sqndr/d8-theming-guide">Theme guide by Sqndr</a></li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Eskerrik asko!</h1>
+					<h2>Preguntas?</h2>
+					<h3>Pako Garcia</h3>
+					<p>
+						pako.garcia@ymbra.com<br>
+						<small><a href="http://ymbra.com">Vegan Themer at <img src="images/logo-ymbra.png" class="logo-ymbra"></a><br> <i class="fa fa-twitter"></i><a href="http://twitter.com/pakmanlh">@pakmanlh</a> in the internets</small>
+					</p>
+					<p>#DdayBilbao2014</p>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
 </html>
