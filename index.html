@@ -262,6 +262,7 @@
 				      <h2>Basado en SMACSS & BEM</h2>
 				      <a href="https://drupal.org/node/1887918">CSS architecture (1887918)</a>
 				      <pre><code>
+				      // .block__element--modifier
 				      .notification {
 				          /* general styles for all notifications */
 				        }
@@ -276,6 +277,8 @@
 				      <h1>Archivos css </h1>
 				      <img src="images/cssfilename.jpg">
 				    </section>
+
+
 
 				    <section>
 				      <h1>B.A.T. Namescheme</h1>
@@ -1005,7 +1008,17 @@
 				  </section>
 
 				  <section>
+				  	<h2>Filtro</h2>
 
+				    <pre><code contenteditable>
+<a href="{{ url('<front>') }}" title="{{ 'Home'|t }}" rel="home" class="site-logo"></a>
+				    </code></pre>
+
+
+				  </section>
+
+				  <section>
+			  		<h2>función t() como filtro con parámetro</h2>
 
 				    <pre><code contenteditable>
 				    {{ 'last checked: @time ago'| t({'@time':time}) }}
@@ -1016,10 +1029,22 @@
 
 
 				  <section>
-
+				  <h2>Definición de texto traducible</h2>
 				    <pre><code contenteditable>
 				      {% trans %}
 				        Hi im a euskaldun and i speak funny: ongi etorri
+				      {% endtrans %}
+				    </code></pre>
+
+				  </section>
+
+				  <section>
+				  	<h2>Manejo de plurales</h2>
+				    <pre><code contenteditable>
+				      {% trans %}
+				        Kaixo euskaldun.
+				      {% plural count %}
+				        Kaixo {{ count }} euskaldunes.
 				      {% endtrans %}
 				    </code></pre>
 
@@ -1029,6 +1054,29 @@
 				</section>
 
 				<!-- translate -->
+
+				<section>
+					<section>
+						<h2>Nuevo tema en core</h2>
+						<img src="images/classy0.png" class="classy_image">
+					</section>
+					<section>
+						<h2>Con lo justo y necesario, nada más</h2>
+						<img src="images/classy.png" class="classy_image">
+					</section>
+					<section>
+						<h2>Crear nuevo tema basado en sassy (.info.yml)</h2>
+						<pre><code contenteditable>
+							name: Awesome Theme
+							description: 'An awesome D8 theme.'
+							base theme: classy
+							package: Custom
+							type: theme
+							version: 1.0
+							core: 8.x
+						</code></pre>
+					</section>
+				</section>
 
 				<section>
 					<h1>Recursos</h1>
@@ -1047,6 +1095,7 @@
 						<small><a href="http://ymbra.com">Vegan Themer at <img src="images/logo-ymbra.png" class="logo-ymbra"></a><br> <i class="fa fa-twitter"></i><a href="http://twitter.com/pakmanlh">@pakmanlh</a> in the internets</small>
 					</p>
 					<p>#DdayBilbao2014</p>
+					<small>many thanks to mortendk for the inspiration </small>
 				</section>
 
 			</div>
